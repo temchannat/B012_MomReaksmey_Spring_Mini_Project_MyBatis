@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>User Input Form</title>
+</head>
+<body>
+	<div layout:fragment="content">
+	<div class="wrapper">
+		<div class="container">
+	
+			 <div class="col-lg-6">
+                        <div class="card-box">
+							   <div class="dropdown pull-right">
+                                <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+
+                         <br/>
+
+                            <h4 class="header-title m-t-0 m-b-30">Fill your information</h4>
+
+                            <form th:action="${addStatus==true?'/user/save':'/user/update'}" method="POST" th:object="${user}" enctype="multipart/form-data" role="form" class="form-horizontal">
+                              
+                        
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" th:text="#{name}">Name</label>
+                                    <div class="col-sm-4">
+                                    <td><input type="text" th:field="*{name}" class="form-control" placeholder="Enter Your Full Name"/><span th:if="*{#fields.hasErrors('name')}" th:errors="*{name}" th:text="#{error}"></span></td>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" th:text="#{gender}">Gender</label>
+                                    <div class="col-sm-4">
+                                       <select th:field="*{gender}">
+	                                       	<option value="Male">Male</option>
+	                                       	<option value="Female">Female</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" th:text="#{age}">Age</label>
+                                    <div class="col-sm-4">
+                                        <td><input type="text" th:field="*{age}" class="form-control" placeholder="Enter Your Age"/><span th:if="*{#fields.hasErrors('age')}" th:errors="*{age}" th:text="#{error}"></span></td>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" th:text="#{email}">email</label>
+                                    <div class="col-sm-4">
+                                        <td><input type="text" th:field="*{email}" class="form-control" placeholder="Enter Your Email"/><span th:if="*{#fields.hasErrors('email')}" th:errors="*{salary}" th:text="#{error}"></span></td>
+                                    </div>
+                                </div>
+                                  <div class="form-group">
+                                    <label class="col-sm-3 control-label" th:text="#{user_hash}">User_hash</label>
+                                    <div class="col-sm-4">
+                                    	<!-- disabled="disabled" : it cannot get value from it -->
+                                        <td><input readonly="readonly" type="text" th:field="*{user_hash}" class="form-control" placeholder="Hash Code" /><span th:if="*{#fields.hasErrors('user_hash')}" th:errors="*{salary}" th:text="#{error}"></span></td>
+                                    </div>
+                                </div>
+                                
+                                
+                                <button type="submit" class="btn btn-purple waves-effect waves-light" th:text="#{submit}">Submit</button>
+                               
+                            </form>
+
+                        </div>
+                    </div><!-- end col -->
+                    
+		</div>
+	</div>
+	
+  	</div> 
+</body>
+</html>

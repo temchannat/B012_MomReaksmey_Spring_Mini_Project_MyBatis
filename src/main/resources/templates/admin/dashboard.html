@@ -1,0 +1,102 @@
+	<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="/admin/admin-layout">
+<head>
+	<meta charset="ISO-8859-1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DashBoard</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="wrapper">
+            <div class="container">
+					<!-- Page-Title -->
+					<h2 th:text="#{message}">User</h2>
+					
+					<a th:href="@{/user/add}">
+						<button class="btn btn-purple waves-effect waves-light" th:text="#{addnewuser}">add</button>
+					</a>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="btn-group pull-right m-t-15">
+								<button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card-box table-responsive">
+								
+
+								<h4 class="header-title m-t-0 m-b-30" th:text="#{dbresult}">Database Result</h4>
+
+								<table id="datatable" class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<th th:text="#{id}">Id</th>
+											<th th:text="#{name}">Name</th>
+											<th th:text="#{gender}">Gender</th>
+											<th th:text="#{age}">Age</th>
+											<th th:text="#{email}">Email</th>
+											
+											<th th:text="#{action}">Action</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										
+									<tr th:each="u: ${user}">
+										<td th:text="${u.id}"></td>
+										<td th:text="${u.name}"></td>
+										<td th:text="${u.gender}"></td>
+										<td th:text="${u.age}"></td>
+										<td th:text="${u.email}"></td>
+										
+									 
+										<td>
+											<a th:href="@{/user/aid(user_hash=${u.user_hash})}" th:text="#{view}">View</a> | 
+											<a th:href="@{/user/edit(user_hash=${u.user_hash})}" th:text="#{edit}">Edit</a> | 
+											<a th:href="@{/user/remove(user_hash=${u.user_hash})}" th:text="#{remove}">Remove</a>
+										</td>
+										
+										 
+									</tr>
+									<tr>
+										<td th:text="'Total : ' + ${total}"></td>
+										<td th:text="'Male : ' + ${male}"></td>
+										<td th:text="'Female : ' + ${female}"></td>
+									</tr>
+							
+				
+									</tbody>
+								</table>
+							</div>
+						</div><!-- end col -->
+					</div>
+					<!-- end row -->
+			</div>
+
+	</div>	
+      
+
+               
+               
+                <!-- end row -->
+
+</div>
+
+
+	
+</body>
+</html>

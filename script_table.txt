@@ -1,0 +1,10 @@
+create table userss
+(
+
+id serial primary key,
+name varchar(50),
+gender varchar(8),
+age varchar(50),
+email varchar(50), 
+user_hash varchar(100)
+)

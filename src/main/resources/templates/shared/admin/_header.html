@@ -1,0 +1,152 @@
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- LOGO -->
+                    <div class="topbar-left">
+                        <a th:href="@{/user/select}" class="logo" th:text="#{admin}"><span>Admin<span>to</span></span></a>
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                            <li>
+                                <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                                     <input type="text" th:placeholder="#{search}" class="form-control">
+                                     <a href=""><i class="fa fa-search"></i></a>
+                                </form>
+                            </li>
+                            <li>
+                                <!-- Notification -->
+                                <div class="notification-box">
+                                    <ul class="list-inline m-b-0">
+                                        <li>
+                                            <a href="javascript:void(0);" class="right-bar-toggle">
+                                                <i class="zmdi zmdi-T`H`E`M`E`L`O`C`K`.`C`O`M`-none"></i>
+                                            </a>
+                                            <div class="noti-dot">
+                                                <span class="dot"></span>
+                                                <span class="pulse"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Notification bar -->
+                            </li>
+
+                            <li class="dropdown user-box">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown" aria-expanded="true">
+                                    <img th:src="@{/resources/admin/assets/images/users/avatar-2.jpg}" alt="user-img" class="img-circle user-img">
+                                    <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                    <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
+                                    <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="navbar-custom">
+                <div class="container">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li class="active">
+                                <a th:href="@{/user/select}" th:text="#{dashboard}" class="active"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                            </li>
+                            <li class="has-submenu">
+                                <a th:href="@{/user/add}" th:text="#{userform}"><i class="zmdi zmdi-invert-colors"></i> <span> User Form </span> </a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="ui-buttons.html">Buttons</a></li>
+                                            <li><a href="ui-cards.html">Cards</a></li>
+                                            <li><a href="ui-typography.html">Typography </a></li>
+                                            <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
+                                            <li><a href="ui-material-icons.html">Material Design Icons</a></li>
+                                            <li><a href="ui-font-awesome-icons.html">Font Awesome</a></li>
+                                            <li><a href="ui-themify-icons.html">Themify Icons</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="ui-modals.html">Modals</a></li>
+                                            <li><a href="ui-notification.html">Notification</a></li>
+                                            <li><a href="ui-range-slider.html">Range Slider</a></li>
+                                            <li><a href="ui-components.html">Components</a>
+                                            <li><a href="ui-sweetalert.html">Sweet Alert</a>
+                                            <li><a href="ui-treeview.html">Tree view</a>
+                                            <li><a href="ui-widgets.html">Widgets</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a th:href="@{/user/userlist}" th:text="#{userdata}"><i class="zmdi zmdi-collection-text"></i><span> User list Data </span> </a>
+                                <ul class="submenu">
+                                    <li><a href="form-elements.html">General Elements</a></li>
+                                    <li><a href="form-advanced.html">Advanced Form</a></li>
+                                    <li><a href="form-validation.html">Form Validation</a></li>
+                                    <li><a href="form-wizard.html">Form Wizard</a></li>
+                                    <li><a href="form-fileupload.html">Form Uploads</a></li>
+                                    <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
+                                    <li><a href="form-xeditable.html">X-editable</a></li>
+                                </ul>
+                            </li>
+
+                
+                             <li class="has-submenu">
+                                <a th:href="@{/user/userrole}" th:text="#{userroleform}"><i class="zmdi zmdi-view-list"></i> <span> User-Role</span> </a>
+                                <ul class="submenu">
+                                    <li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a th:href="@{/user/userroledata}" th:text="#{userroledata}"><i class="zmdi zmdi-view-list"></i> <span> User-Role Data</span> </a>
+                                <ul class="submenu">
+                                    <li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                </ul>
+                            </li>
+                   
+                             <li class="has-submenu">
+                                <a th:href="@{?lang=kh}"><img th:src="@{/resources/admin/assets/images/users/khmer.jpg}"/></a>
+                                
+                            </li>
+                             <li class="has-submenu">
+                                <a th:href="@{?lang=en}"><img th:src="@{/resources/admin/assets/images/users/english.jpg}"/></a>
+                                
+                            </li>
+
+
+                        </ul>
+                        <!-- End navigation menu  -->
+                    </div>
+                </div>
+            </div>
+        </header>
